@@ -87,9 +87,17 @@ print(type(add)) -- function
 ## table
 
 Uma tabela é uma estrutura de dados que armazena informações utilizando pares
-de chave e valor. Tabelas são um recurso poderoso em Lua e serão abordadas em
-detalhes no Capítulo 3, Tabelas e Objetos.
-userdata
+de chave e valor.
+
+```lua
+local fruits = { "apple", "ice cream", "orange" }
+
+print(fruits[1]) -- apple
+print(fruits[2]) -- ice cream
+print(fruits[3]) -- orange
+```
+
+## userdata
 
 O tipo de dado userdata permite a criação de estruturas de dados complexas
 definidas na linguagem de programação C. Essas estruturas são utilizadas para
