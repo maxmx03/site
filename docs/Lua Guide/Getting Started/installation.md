@@ -27,13 +27,12 @@ on Non NixOS
 nix-env -iA nixpkgs.lua
 ```
 
-[packages](https://search.nixos.org/packages?channel=23.05&show=lua&from=0&size=50&sort=relevance&type=packages&query=lua)
-
 ## Windows
 
 Para instalar o Lua no Windows, siga os seguintes passos:
 
-1. Acesse o site do Lua em [lua.org](www.lua.org) e vá para a seção de Downloads.
+1. Acesse o site do Lua em [lua.org](https://www.lua.org/download.html) e
+   vá para a seção de Downloads.
 2. Faça o download do pacote binário do Lua para Windows, compatível com a
    arquitetura do seu sistema (32 bits ou 64 bits).
 3. Extraia o pacote baixado para um local de sua escolha.
