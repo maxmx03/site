@@ -40,7 +40,7 @@ Para instalar o Lua no Windows, siga os seguintes passos:
    que você execute o Lua a partir de qualquer prompt de comando.
 5. Abra um prompt de comando e digite lua -v para verificar se o Lua está
 
-Um alternative é utilizar o scoop para instalar o lua.
+Um alternativa é utilizar o scoop para instalar o lua.
 
 ```powershell
 scoop bucket add main
