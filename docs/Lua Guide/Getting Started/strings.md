@@ -30,7 +30,7 @@ Tamanho da string: 11
 Tamanho da string: 11
 ```
 
-## Concatenação de strings
+## Concatenação de strings e string.format()
 
 Em Lua, a concatenação de strings é realizada utilizando o operador de
 concatenação (`..`). Esse operador permite combinar duas ou mais strings
@@ -51,6 +51,18 @@ Lua programming
 Além da concatenação, você também pode usar a função `string.format` para
 formatar strings em Lua. Essa função permite combinar valores e strings
 formatadas em uma única string, seguindo um padrão definido.
+
+| Especificador | Descrição                                                  |
+| ------------- | ---------------------------------------------------------- |
+| `%s`          | Formata o argumento como uma string                        |
+| `%d`          | Formata o argumento como um número decimal inteiro         |
+| `%f`          | Formata o argumento como um número de ponto flutuante      |
+| `%c`          | Formata o argumento como um caractere ASCII                |
+| `%o`          | Formata o argumento como um número octal                   |
+| `%x` ou `%X`  | Formata o argumento como um número hexadecimal             |
+| `%%`          | Insere um caractere de porcentagem literal (`%`) na string |
+
+Exemplo:
 
 ```lua
 local name = "Alice"
@@ -110,10 +122,47 @@ Saída:
 O valor booleano é: true
 ```
 
-!!! tip
+## Caracteres de Escape
 
-    Quando você tenta modificar uma string existente, uma nova string
-    é criada em um novo endereço de memória, com o valor modificado, enquanto
-    a string original permanece inalterada em seu endereço de memória original.
-    Isso ocorre porque as strings em Lua são imutáveis, ou seja, uma vez que
-    uma string é criada, seu conteúdo não pode ser alterado diretamente.
+Em Lua, os caracteres de escape são usados para representar caracteres
+especiais dentro de uma string. Eles permitem que você inclua caracteres que,
+de outra forma, teriam um significado especial na linguagem.
+
+Aqui estão alguns exemplos de caracteres de escape comumente usados em Lua:
+
+- \n - Nova linha
+- \t - Tabulação
+- \" - Aspas duplas
+- \' - Aspas simples
+- \\ - Barra invertida
+
+Exemplo:
+
+```lua
+local message = 'Ele disse "tchau" e foi embora'
+print(message)
+```
+
+Saída:
+
+```bash
+Ele disse "tchau" e foi embora
+```
+
+Nesse exemplo, as aspas duplas dentro da string são precedidas por uma barra
+invertida \ para que sejam tratadas como parte do texto, e não como o fim da
+string.
+
+Você também pode usar aspas duplas em vez de aspas simples para evitar a
+necessidade de escapar as aspas dentro da string:
+
+```lua
+local message = "Ele disse \"tchau\" e foi embora"
+print(message)
+```
+
+A saída será a mesma:
+
+```bash
+Ele disse "tchau" e foi embora
+```
