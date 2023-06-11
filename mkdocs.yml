@@ -1,0 +1,53 @@
+site_name: Max Miliano
+site_url: ""
+repo_url: https://github.com/maxmx03/site
+repo_name: maxmx03/site
+nav:
+  - Curso de Lua:
+      Primeiros Passos:
+        Introdução: Lua Guide/Getting Started/index.md
+        Instalação: Lua Guide/Getting Started/installation.md
+        Escolhendo uma IDE: Lua Guide/Getting Started/ide.md
+        Primeiro Programa: Lua Guide/Getting Started/first-program.md
+        Declarando Variáveis: Lua Guide/Getting Started/variables.md
+        Coméntarios: Lua Guide/Getting Started/comments.md
+        Tipos de dados: Lua Guide/Getting Started/types.md
+theme:
+  name: material
+  features:
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: light blue
+      accent: light blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: purple
+      accent: purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/maxmx03
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+extra_css:
+  - stylesheets/extra.css
