@@ -12,6 +12,7 @@ nav:
         Declarando Variáveis: Lua Guide/Getting Started/variables.md
         Coméntarios: Lua Guide/Getting Started/comments.md
         Tipos de dados: Lua Guide/Getting Started/types.md
+        Strings: Lua Guide/Getting Started/strings.md
 theme:
   name: material
   features:
