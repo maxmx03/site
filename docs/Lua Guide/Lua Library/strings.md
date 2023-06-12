@@ -1,4 +1,4 @@
-# Biblioetca de Strings
+# Biblioteca de Strings
 
 O poder de um interpretador Lua bruto para manipular strings é bastante
 limitado. Um programa pode criar literais de strings e concatená-las. Mas ele
@@ -74,7 +74,7 @@ Exemplo de uso:
 local palavra = "lua"
 local palavra_maiuscula = string.upper(palavra)
 
-print(palavra_maiuscula)  -- Saída: "LUA"
+print(palavra_maiuscula)
 ```
 
 Saída:
@@ -230,3 +230,80 @@ Lua, como `string.match`, `string.gmatch` e `string.gsub`.
 | %x                  | representa o próprio caractere x (ex: %., %ç, %õ)                                         |
 | [set]               | representa a classe que é a união de todos os caracteres no conjunto                      |
 | [^set]              | representa o complemento do conjunto, onde o conjunto é interpretado como descrito acima. |
+
+Exemplo com `%a`:
+
+```lua
+local texto = "Olá, mundo!"
+local texto_encontrado = string.match(texto, "%a+")
+
+print(texto_encontrado)
+```
+
+Saída:
+
+```lua
+Ol
+```
+
+!!! note
+
+    `string.match` retorna apenas o primeiro padrão encontrado,
+    se você utilizar apenas `%a` por exemplo, ele irá retornar apenas um
+    único caracter.
+
+Exemplo com `%x`:
+
+```lua
+local texto = "Olá, mundo!"
+local texto_encontrado = string.match(texto, "%!")
+
+print(texto_encontrado)
+```
+
+Saída:
+
+```bash
+!
+```
+
+Exemplo com `[set]`:
+
+```lua
+local texto = "Ola, mundo!"
+
+for texto_encontrado in string.gmatch(texto, "[Oauo]") do
+  print(texto_encontrado)
+end
+```
+
+Saída:
+
+```lua
+O
+a
+u
+o
+```
+
+Exemplo com `[^set]`:
+
+```lua
+local texto = "Ola, mundo!"
+
+for texto_encontrado in string.gmatch(texto, "[^Oauo]") do
+  print(texto_encontrado)
+end
+```
+
+Saída:
+
+```lua
+l
+,
+
+m
+n
+d
+!
+```
