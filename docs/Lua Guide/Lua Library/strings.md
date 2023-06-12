@@ -15,18 +15,20 @@ inicial e final.
 
 Exemplo de uso:
 
-```lua
-local mensagem = "Olá, mundo!"
-local parte = string.sub(mensagem, 1, 4)
+=== "Lua"
 
-print(parte)
-```
+    ```lua
+    local mensagem = "Olá, mundo!"
+    local parte = string.sub(mensagem, 1, 4)
 
-Saída:
+    print(parte)
+    ```
 
-```bash
-Olá
-```
+=== "Console"
+
+    ```bash
+    Olá
+    ```
 
 Neste exemplo, a função `string.sub` é usada para extrair os primeiros quatro
 caracteres da string mensagem e armazená-los na variável `parte`.
@@ -48,16 +50,18 @@ padrão na string.
 
 Exemplo de uso:
 
-```lua
-local mensagem = "Olá, Lua!"
-local inicio, fim = string.find(mensagem, "Lua")
-```
+=== "Lua"
 
-Saída:
+    ```lua
+    local mensagem = "Olá, Lua!"
+    local inicio, fim = string.find(mensagem, "Lua")
+    ```
 
-```lua
-7 9
-```
+=== "Console"
+
+    ```lua
+    7 9
+    ```
 
 Neste exemplo, a função `string.find` é usada para encontrar a primeira
 ocorrência da palavra "Lua" na string `mensagem`. Os índices inicial e final
@@ -70,18 +74,20 @@ string em letras maiúsculas.
 
 Exemplo de uso:
 
-```lua
-local palavra = "lua"
-local palavra_maiuscula = string.upper(palavra)
+=== "Lua"
 
-print(palavra_maiuscula)
-```
+    ```lua
+    local palavra = "lua"
+    local palavra_maiuscula = string.upper(palavra)
 
-Saída:
+    print(palavra_maiuscula)
+    ```
 
-```lua
-LUA
-```
+=== "Console"
+
+    ```lua
+    LUA
+    ```
 
 Neste exemplo, a função `string.upper` é usada para converter a string `palavra`
 em letras maiúsculas e armazená-la na variável `palavra_maiuscula`.
@@ -93,17 +99,19 @@ em letras minúsculas.
 
 Exemplo de uso:
 
-```lua
-local palavra = "LUA"
-local palavra_minuscula = string.lower(palavra)
-print(palavra_minuscula)  -- Saída: "lua"
-```
+=== "Lua"
 
-Saída:
+    ```lua
+    local palavra = "LUA"
+    local palavra_minuscula = string.lower(palavra)
+    print(palavra_minuscula)  -- Saída: "lua"
+    ```
 
-```lua
-lua
-```
+=== "Console"
+
+    ```lua
+    lua
+    ```
 
 Neste exemplo, a função `string.lower` é usada para converter a string `palavra`
 em letras minúsculas e armazená-la na variável `palavra_minuscula`.
@@ -115,17 +123,19 @@ string.
 
 Exemplo de uso:
 
-```lua
-local palavra = "Lua"
-local palavra_invertida = string.reverse(palavra)
-print(palavra_invertida)
-```
+=== "Lua"
 
-Saída:
+    ```lua
+    local palavra = "Lua"
+    local palavra_invertida = string.reverse(palavra)
+    print(palavra_invertida)
+    ```
 
-```lua
-auL
-```
+=== "Console"
+
+    ```lua
+    auL
+    ```
 
 Neste exemplo, a função `string.reverse` é usada para inverter a ordem dos
 caracteres da string `palavra` e armazená-la na variável `palavra_invertida`.
@@ -138,17 +148,19 @@ ela deve ser repetida.
 
 Exemplo de uso:
 
-```lua
-local original = "Olá!"
-local repetido = string.rep(original, 3)
-print(repetido)
-```
+=== "Lua"
 
-Saída:
+    ```lua
+    local original = "Olá!"
+    local repetido = string.rep(original, 3)
+    print(repetido)
+    ```
 
-```lua
-Olá!Olá!Olá!
-```
+=== "Console"
+
+    ```lua
+    Olá!Olá!Olá!
+    ```
 
 Neste exemplo, a string `"Olá!"` é repetida três vezes, resultando na saída
 `"Olá!Olá!Olá!"`.
@@ -162,24 +174,26 @@ loop `for`.
 
 Exemplo de uso:
 
-```lua
-local texto = "Lua é uma linguagem de programação"
+=== "Lua"
 
-for palavra in string.gmatch(texto, "[%aéçã]+") do
-  print(palavra)
-end
-```
+    ```lua
+    local texto = "Lua é uma linguagem de programação"
 
-Saída:
+    for palavra in string.gmatch(texto, "[%aéçã]+") do
+      print(palavra)
+    end
+    ```
 
-```lua
-Lua
-é
-uma
-linguagem
-de
-programação
-```
+=== "Console"
+
+    ```lua
+    Lua
+    é
+    uma
+    linguagem
+    de
+    programação
+    ```
 
 Neste exemplo, a expressão `"%a+"` é utilizada como padrão para encontrar
 palavras na string `texto`. O loop `for` itera sobre todas as palavras
@@ -190,17 +204,19 @@ encontradas ias imprime.
 A função string.gsub é usada para substituir todas as ocorrências de um padrão
 em uma string por outro valor. A sintaxe básica é a seguinte:
 
-```lua
-local texto = "Lua é uma linguagem de programação"
-local novo_texto = string.gsub(texto, "linguagem", "idioma")
-print(novo_texto)
-```
+=== "Lua"
 
-Saída:
+    ```lua
+    local texto = "Lua é uma linguagem de programação"
+    local novo_texto = string.gsub(texto, "linguagem", "idioma")
+    print(novo_texto)
+    ```
 
-```lua
-Lua é uma idioma de programação
-```
+=== "Console"
+
+    ```lua
+    Lua é uma idioma de programação
+    ```
 
 Neste exemplo, a palavra "linguagem" é substituída por "idioma" na string
 `texto`. A função `string.gsub` retorna a nova string com as substituições
@@ -233,18 +249,20 @@ Lua, como `string.match`, `string.gmatch` e `string.gsub`.
 
 Exemplo com `%a`:
 
-```lua
-local texto = "Olá, mundo!"
-local texto_encontrado = string.match(texto, "%a+")
+=== "Lua"
 
-print(texto_encontrado)
-```
+    ```lua
+    local texto = "Olá, mundo!"
+    local texto_encontrado = string.match(texto, "%a+")
 
-Saída:
+    print(texto_encontrado)
+    ```
 
-```lua
-Ol
-```
+=== "Console"
+
+    ```bash
+    Ol
+    ```
 
 !!! note
 
@@ -254,56 +272,62 @@ Ol
 
 Exemplo com `%x`:
 
-```lua
-local texto = "Olá, mundo!"
-local texto_encontrado = string.match(texto, "%!")
+=== "Lua"
 
-print(texto_encontrado)
-```
+    ```lua
+    local texto = "Olá, mundo!"
+    local texto_encontrado = string.match(texto, "%!")
 
-Saída:
+    print(texto_encontrado)
+    ```
 
-```bash
-!
-```
+=== "Console"
+
+    ```bash
+    !
+    ```
 
 Exemplo com `[set]`:
 
-```lua
-local texto = "Ola, mundo!"
+=== "Lua"
 
-for texto_encontrado in string.gmatch(texto, "[Oauo]") do
-  print(texto_encontrado)
-end
-```
+    ```lua
+    local texto = "Ola, mundo!"
 
-Saída:
+    for texto_encontrado in string.gmatch(texto, "[Oauo]") do
+      print(texto_encontrado)
+    end
+    ```
 
-```lua
-O
-a
-u
-o
-```
+=== "Console"
+
+    ```lua
+    O
+    a
+    u
+    o
+    ```
 
 Exemplo com `[^set]`:
 
-```lua
-local texto = "Ola, mundo!"
+=== "Lua"
 
-for texto_encontrado in string.gmatch(texto, "[^Oauo]") do
-  print(texto_encontrado)
-end
-```
+    ```lua
+    local texto = "Ola, mundo!"
 
-Saída:
+    for texto_encontrado in string.gmatch(texto, "[^Oauo]") do
+      print(texto_encontrado)
+    end
+    ```
 
-```lua
-l
-,
+=== "Console"
 
-m
-n
-d
-!
-```
+    ```lua
+    l
+    ,
+
+    m
+    n
+    d
+    !
+    ```

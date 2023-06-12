@@ -19,9 +19,17 @@ O tipo da variável é determinado com base no valor atribuído a ela.
 Uma vez que a variável é declarada, você pode usá-la em todo o seu código.
 Por exemplo, você pode imprimir o valor da variável `mensagem` usando a função print:
 
-```lua
-print(mensagem) -- Saída: Olá, mundo
-```
+=== "Lua"
+
+    ```lua
+    print(mensagem)
+    ```
+
+=== "Console"
+
+    ```bash
+    Olá mundo
+    ```
 
 Em Lua, as variáveis podem armazenar diferentes tipos de valores, como
 números, strings, booleanos, tabelas e outros.
@@ -30,4 +38,3 @@ números, strings, booleanos, tabelas e outros.
 
     Lembre-se de escolher nomes significativos e descritivos para suas
     variáveis, a fim de melhorar a legibilidade e a manutenção do código.
-

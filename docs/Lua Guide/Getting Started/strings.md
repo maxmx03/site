@@ -8,27 +8,29 @@ para representar palavras, frases e textos em geral.
 Para obter o tamanho de uma string em Lua, você pode utilizar o operador de
 comprimento `#` ou a função `string.len()`.
 
-Neste exemplo, a variável hello contém a string "Olá, mundo".
-Usando o operador #, podemos obter o tamanho da string e armazená-lo na
-variável length. Da mesma forma, a função string.len() também retorna o
+Neste exemplo, a variável hello contém a string `"Olá, mundo"`.
+Usando o operador `#`, podemos obter o tamanho da string e armazená-lo na
+variável length. Da mesma forma, a função `string.len()` também retorna o
 tamanho da string. Ambos os valores são impressos no console usando a função
-print().
+`print()`.
 
-```lua
-local hello = "Olá, mundo"
-local length = #hello
-local length2 = string.len(hello)
+=== "Lua"
 
-print(string.format("Tamanho da string: %s", length))
-print(string.format("Tamanho da string: %s", length2))
-```
+    ```lua
+    local hello = "Olá, mundo"
+    local length = #hello
+    local length2 = string.len(hello)
 
-Ao executar esse código, você verá a saída que exibe o tamanho da string:
+    print(string.format("Tamanho da string: %s", length))
+    print(string.format("Tamanho da string: %s", length2))
+    ```
 
-```bash
-Tamanho da string: 11
-Tamanho da string: 11
-```
+=== "Console"
+
+    ```bash
+    Tamanho da string: 11
+    Tamanho da string: 11
+    ```
 
 ## Concatenação de strings e string.format()
 
@@ -36,17 +38,19 @@ Em Lua, a concatenação de strings é realizada utilizando o operador de
 concatenação (`..`). Esse operador permite combinar duas ou mais strings
 em uma única string.
 
-```lua
-local str = "Lua"
-str = str .. " programming"
-print(str)
-```
+=== "Lua"
 
-Saída:
+    ```lua
+    local str = "Lua"
+    str = str .. " programming"
+    print(str)
+    ```
 
-```bash
-Lua programming
-```
+=== "Console"
+
+    ```bash
+    Lua programming
+    ```
 
 Além da concatenação, você também pode usar a função `string.format` para
 formatar strings em Lua. Essa função permite combinar valores e strings
@@ -64,18 +68,20 @@ formatadas em uma única string, seguindo um padrão definido.
 
 Exemplo:
 
-```lua
-local name = "Alice"
-local age = 25
-local message = string.format("Olá, meu nome é %s e eu tenho %d anos.", name, age)
-print(message)
-```
+=== "Lua"
 
-Saída:
+    ```lua
+    local name = "Alice"
+    local age = 25
+    local message = string.format("Olá, meu nome é %s e eu tenho %d anos.", name, age)
+    print(message)
+    ```
 
-```bash
-Olá, meu nome é Alice e eu tenho 25 anos.
-```
+=== "Console"
+
+    ```bash
+    Olá, meu nome é Alice e eu tenho 25 anos.
+    ```
 
 ## Coerção de Strings
 
@@ -90,17 +96,19 @@ da concatenação implícita.
 Quando você usa o operador de concatenação (`..`) para combinar uma string com
 outro tipo de dado, Lua automaticamente converte o valor para uma string.
 
-```lua
-local number = 42
-local str = "O número é: " .. number
-print(str)
-```
+=== "Lua"
 
-Saída:
+    ```lua
+    local number = 42
+    local str = "O número é: " .. number
+    print(str)
+    ```
 
-```lua
-O número é: 42
-```
+=== "Console"
+
+    ```lua
+    O número é: 42
+    ```
 
 Nesse exemplo, o valor da variável number é implicitamente convertido para uma
 string durante a concatenação com a string `"O número é: "`. O resultado é a
@@ -110,17 +118,19 @@ string final "O número é: 42".
 a função tostring(). Essa função converte explicitamente um valor para sua
 representação em string.
 
-```lua
-local boolean = true
-local str = "O valor booleano é: " .. tostring(boolean)
-print(str)
-```
+=== "Lua"
 
-Saída:
+    ```lua
+    local boolean = true
+    local str = "O valor booleano é: " .. tostring(boolean)
+    print(str)
+    ```
 
-```lua
-O valor booleano é: true
-```
+=== "Console"
+
+    ```lua
+    O valor booleano é: true
+    ```
 
 ## Caracteres de Escape
 
@@ -138,31 +148,37 @@ Aqui estão alguns exemplos de caracteres de escape comumente usados em Lua:
 
 Exemplo:
 
-```lua
-local message = 'Ele disse "tchau" e foi embora'
-print(message)
-```
+=== "Lua"
 
-Saída:
+    ```lua
+    local message = 'Ele disse "tchau" e foi embora'
+    print(message)
+    ```
 
-```bash
-Ele disse "tchau" e foi embora
-```
+=== "Console"
+
+    ```bash
+    Ele disse "tchau" e foi embora
+    ```
 
 Nesse exemplo, as aspas duplas dentro da string são precedidas por uma barra
 invertida \ para que sejam tratadas como parte do texto, e não como o fim da
 string.
 
 Você também pode usar aspas duplas em vez de aspas simples para evitar a
-necessidade de escapar as aspas dentro da string:
-
-```lua
-local message = "Ele disse \"tchau\" e foi embora"
-print(message)
-```
+necessidade de escapar as aspas dentro da string
 
 A saída será a mesma:
 
-```bash
-Ele disse "tchau" e foi embora
-```
+=== "Lua"
+
+    ```lua
+    local message = "Ele disse \"tchau\" e foi embora"
+    print(message)
+    ```
+
+=== "Console"
+
+    ```bash
+    Ele disse "tchau" e foi embora
+    ```

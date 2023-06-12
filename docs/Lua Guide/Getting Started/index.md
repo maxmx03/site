@@ -7,28 +7,32 @@ descrição de dados.
 
 [fonte](https://www.lua.org/portugues.html)
 
-```lua
-function sum(a, b)
-    return a + b
-end
+=== "Exemplo 1"
 
-local n1, n2 = 1, 2
-local result = sum(n1, n2)
-print(string.format("%s + %s = %s", n1, n2, result))
-```
+    ```lua
+    function sum(a, b)
+        return a + b
+    end
 
-```lua
-local Person = {}
+    local n1, n2 = 1, 2
+    local result = sum(n1, n2)
+    print(string.format("%s + %s = %s", n1, n2, result))
+    ```
 
-function Person:new(obj)
-    setmetatable(obj, self)
-    self.__index = self
+=== "Exemplo 2"
 
-    return obj
-end
+    ```lua
+    local Person = {}
 
-local person = Person:new({ name = "Max", age = 17 })
+    function Person:new(obj)
+        setmetatable(obj, self)
+        self.__index = self
 
-print("Name: " .. person.name)
-print("Age: " .. person.age)
-```
+        return obj
+    end
+
+    local person = Person:new({ name = "Max", age = 17 })
+
+    print("Name: " .. person.name)
+    print("Age: " .. person.age)
+    ```

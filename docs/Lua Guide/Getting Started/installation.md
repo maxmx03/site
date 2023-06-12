@@ -3,29 +3,29 @@
 Para instalar o Lua no Linux, você pode usar o gerenciador de pacotes de sua
 distro.
 
-## ArchLinux
+=== "ArchLinux"
 
-```bash
-paru -S lua 5.4.6-1
-```
+    ```bash
+    paru -S lua 5.4.6-1
+    ```
 
-## Ubuntu
+=== "Ubuntu"
 
-```bash
-sudo apt install lua5.4
-```
+    ```bash
+    sudo apt install lua5.4
+    ```
 
-## NixOS
+=== "Fedora"
 
-```bash
-nix-env -iA nixos.lua
-```
+    ```bash
+    sudo dnf install lua
+    ```
 
-on Non NixOS
+=== "NixOS"
 
-```bash
-nix-env -iA nixpkgs.lua
-```
+    ```bash
+    nix-env -iA nixos.lua
+    ```
 
 ## Windows
 
@@ -62,9 +62,17 @@ scoop install main/lua
 
 Para instalar o Lua no macOS, você pode usar o gerenciador de pacotes Homebrew.
 
-```bash
-brew install lua
-```
+=== "Homebrew"
+
+    ```bash
+    brew install lua
+    ```
+
+=== "Nix"
+
+    ```bash
+    nix-env -iA nixpkgs.lua
+    ```
 
 Após a conclusão da instalação, você pode verificar se tudo ocorreu
 corretamente digitando `lua -v` no Terminal. A versão do Lua deverá ser

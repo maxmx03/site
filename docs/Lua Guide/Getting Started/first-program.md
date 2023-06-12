@@ -4,9 +4,24 @@
 com o famoso `"Hello World"`. No Lua, isso é bastante simples. Basta chamar a
 função print e passar como parâmetro o que você deseja exibir na tela.
 
-```lua
-print("Olá, mundo!")
-```
+=== "Lua"
+
+    ```lua
+    print("Olá, mundo!")
+    ```
+
+=== "C"
+
+    ```c
+    #include <stdio.h>
+
+    int main()
+    {
+      puts("Hello World");
+
+      return 0;
+    }
+    ```
 
 Em contraste, ao programar em C, o código do programa "Hello World" é
 estruturado dentro de uma função chamada main. Nesse exemplo em C, utilizamos
@@ -21,14 +36,3 @@ Por fim, utilizamos a instrução `return 0;` para indicar que o programa foi
 executado corretamente. O valor zero é comumente utilizado para indicar sucesso
 na execução do programa, embora outros valores possam ser usados para sinalizar
 diferentes situações de saída.
-
-```c
-#include <stdio.h>
-
-int main()
-{
-  puts("Hello World");
-
-  return 0;
-}
-```
