@@ -164,10 +164,10 @@ Exemplo de uso:
 
 ```lua
 local texto = "Lua é uma linguagem de programação"
-for palavra in string.gmatch(texto, "%a+") do
+
+for palavra in string.gmatch(texto, "[%aéçã]+") do
   print(palavra)
 end
-
 ```
 
 Saída:
@@ -206,24 +206,27 @@ Neste exemplo, a palavra "linguagem" é substituída por "idioma" na string
 `texto`. A função `string.gsub` retorna a nova string com as substituições
 aplicadas. A saída será `"Lua é uma idioma de programação"`.
 
-## Expressões de Padrão no Lua
+## Encontrar Padrões
 
-As expressões de padrão são sequências especiais de caracteres usadas para
-buscar padrões específicos em uma string. Elas são amplamente utilizadas em
-diversas funções da biblioteca de strings do Lua, como `string.match`,
-`string.gmatch` e `string.gsub`.
-Essas expressões permitem realizar correspondências avançadas e flexíveis em
-uma string.
+Uma classe de caracteres é usada para representar um conjunto de caracteres.
+As seguintes combinações são permitidas para descrever uma classe de
+caracteres:
 
-| Expressão  | Descrição                                                               |
-| ---------- | ----------------------------------------------------------------------- |
-| "%a+"      | Encontra palavras (sequência de letras)                                 |
-| "%d+"      | Encontra números                                                        |
-| "%s+"      | Encontra espaços em branco                                              |
-| "%w+"      | Encontra caracteres alfanuméricos                                       |
-| "%l+"      | Encontra letras minúsculas                                              |
-| "%u+"      | Encontra letras maiúsculas                                              |
-| "%p+"      | Encontra caracteres de pontuação                                        |
-| "%x+"      | Encontra dígitos hexadecimais (0-9, a-f, A-F)                           |
-| "[aeiou]+" | Encontra sequências de vogais                                           |
-| "[^%d%s]+" | Encontra sequências de caracteres não numéricos e não espaços em branco |
+Elas são amplamente utilizadas em diversas funções da biblioteca de strings do
+Lua, como `string.match`, `string.gmatch` e `string.gsub`.
+
+| Caractere de Classe | descrição                                                                                 |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| %a                  | representa todas as letras.                                                               |
+| %c                  | representa todos os caracteres de controle.                                               |
+| %d                  | representa todos os dígitos.                                                              |
+| %l                  | representa todas as letras minúsculas.                                                    |
+| %p                  | representa todos os caracteres de pontuação.                                              |
+| %s                  | representa todos os caracteres de espaço.                                                 |
+| %u                  | representa todas as letras maiúsculas.                                                    |
+| %w                  | representa todos os caracteres alfanuméricos.                                             |
+| %x                  | representa todos os dígitos hexadecimais (0-9, a-f, A-F).                                 |
+| %z                  | representa o caractere com representação 0.                                               |
+| %x                  | representa o próprio caractere x (ex: %., %ç, %õ)                                         |
+| [set]               | representa a classe que é a união de todos os caracteres no conjunto                      |
+| [^set]              | representa o complemento do conjunto, onde o conjunto é interpretado como descrito acima. |
