@@ -53,6 +53,11 @@ Aqui está um exemplo de declaração de uma variável global:
 mensagem = "Olá, mundo!"
 ```
 
+!!! tip
+
+    Quando uma variável global é atribuída, ela mantém seu valor até que seja
+    alterada ou o programa termine sua execução.
+
 ## Escopo
 
 Em Lua, o escopo define a visibilidade e a acessibilidade de uma variável.
@@ -109,3 +114,14 @@ parte do programa.
     ```bash
     Olá, mundo
     ```
+
+No exemplo acima, a variável mensagem é declarada sem a palavra-chave `local`.
+Portanto, ela se torna uma variável global. Ela pode ser acessada e impressa
+em qualquer parte do programa, incluindo fora do bloco onde foi declarada.
+
+!!! warning
+
+    O uso excessivo de variáveis globais pode poluir o espaço global do
+    programa, tornando-o confuso e difícil de gerenciar. Isso pode dificultar a
+    manutenção e a compreensão do código, até dificultando o rastreamento
+    de bugs.
