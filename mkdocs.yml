@@ -14,6 +14,7 @@ nav:
         Tipos de dados: Lua Guide/Getting Started/types.md
         Strings: Lua Guide/Getting Started/strings.md
         Entrada do console: Lua Guide/Getting Started/console.md
+        Definindo Funções: Lua Guide/Getting Started/function.md
       Biblioteca do Lua:
         Strings: Lua Guide/Lua Library/strings.md
 theme:
