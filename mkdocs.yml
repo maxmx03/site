@@ -15,8 +15,9 @@ nav:
         Strings: Lua Guide/Getting Started/strings.md
         Entrada do console: Lua Guide/Getting Started/console.md
         Definindo Funções: Lua Guide/Getting Started/function.md
+        Operações Aritméticas: Lua Guide/Getting Started/arithmetic.md
       Biblioteca do Lua:
-        Strings: Lua Guide/Lua Library/strings.md
+        String: Lua Guide/Lua Library/string.md
 theme:
   name: material
   features:

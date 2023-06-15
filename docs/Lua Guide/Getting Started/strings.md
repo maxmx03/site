@@ -112,10 +112,10 @@ outro tipo de dado, Lua automaticamente converte o valor para uma string.
 
 Nesse exemplo, o valor da variável number é implicitamente convertido para uma
 string durante a concatenação com a string `"O número é: "`. O resultado é a
-string final "O número é: 42".
+string final `"O número é: 42"`.
 
 **Função tostring**: Outra forma de realizar a coerção de strings é utilizando
-a função tostring(). Essa função converte explicitamente um valor para sua
+a função `tostring()`. Essa função converte explicitamente um valor para sua
 representação em string.
 
 === "Lua"

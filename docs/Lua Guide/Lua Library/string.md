@@ -1,4 +1,4 @@
-# Biblioteca de Strings
+# Biblioteca String
 
 O poder de um interpretador Lua bruto para manipular strings é bastante
 limitado. Um programa pode criar literais de strings e concatená-las. Mas ele
