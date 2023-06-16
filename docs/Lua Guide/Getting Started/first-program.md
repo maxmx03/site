@@ -23,6 +23,21 @@ função print e passar como parâmetro o que você deseja exibir na tela.
     }
     ```
 
+Como o rodar o seu primeiro programa:
+
+=== "Lua"
+
+    ```bash
+    lua init.lua
+    ```
+
+=== "C"
+
+    ```bash
+    gcc main.c -o main
+    ./main
+    ```
+
 Em contraste, ao programar em C, o código do programa "Hello World" é
 estruturado dentro de uma função chamada main. Nesse exemplo em C, utilizamos
 a biblioteca `<stdio.h>` para acessar a função `puts`, que é responsável por

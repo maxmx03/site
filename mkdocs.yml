@@ -9,13 +9,16 @@ nav:
         Instalação: Lua Guide/Getting Started/installation.md
         Escolhendo uma IDE: Lua Guide/Getting Started/ide.md
         Primeiro Programa: Lua Guide/Getting Started/first-program.md
-        Declarando Variáveis: Lua Guide/Getting Started/variables.md
-        Comentários: Lua Guide/Getting Started/comments.md
-        Tipos de dados: Lua Guide/Getting Started/types.md
-        Strings: Lua Guide/Getting Started/strings.md
-        Entrada do console: Lua Guide/Getting Started/console.md
-        Definindo Funções: Lua Guide/Getting Started/function.md
-        Operações Aritméticas: Lua Guide/Getting Started/arithmetic.md
+      Aprendendo o Básico:
+        Declarando Variáveis: Lua Guide/Basics/variables.md
+        Comentários: Lua Guide/Basics/comments.md
+        Tipos de dados: Lua Guide/Basics/types.md
+        Strings: Lua Guide/Basics/strings.md
+        Entrada do console: Lua Guide/Basics/console.md
+        Definindo Funções: Lua Guide/Basics/function.md
+        Operações Aritméticas: Lua Guide/Basics/arithmetic.md
+        Operadores Relacionais: Lua Guide/Basics/relational.md
+        Operadores Lógicos: Lua Guide/Basics/logical.md
       Biblioteca do Lua:
         String: Lua Guide/Lua Library/string.md
         Math: Lua Guide/Lua Library/math.md
@@ -59,6 +62,5 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-
 extra_css:
   - stylesheets/extra.css
