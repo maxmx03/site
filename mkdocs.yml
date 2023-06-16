@@ -18,6 +18,7 @@ nav:
         Operações Aritméticas: Lua Guide/Getting Started/arithmetic.md
       Biblioteca do Lua:
         String: Lua Guide/Lua Library/string.md
+        Math: Lua Guide/Lua Library/math.md
 theme:
   name: material
   features:
