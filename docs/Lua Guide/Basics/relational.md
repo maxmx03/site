@@ -100,3 +100,38 @@ No exemplo acima, `x` é `true` porque 5 é maior que 2. `y` é `false` porque 3
 não é menor que 1, `z` é `true` porque na comparação de strings, a ordem
 lexicográfica é levada em consideração, e "lua" é considerado maior que "Lua"
 nesse caso.
+
+## Operador de maior ou igual (>=) e menor ou igual (<=)
+
+O operador de maior ou igual (`>=`) compara se o valor à esquerda é maior ou
+igual ao valor à direita. Retorna `true` se a comparação for verdadeira e `false`
+caso contrário.
+
+O operador de menor ou (`<=`) compara se o valor à esquerda é menor ou igual ao
+valor à direita. Retorna `true` se a comparação for verdadeira e `false` caso
+contrário.
+
+=== "Lua"
+
+    ```lua
+    local x = 5 >= 2
+    local y = 3 <= 1
+    local z = "lua" >= "Lua"
+
+    print(x)
+    print(y)
+    print(z)
+    ```
+
+=== "Console"
+
+    ```bash
+    true
+    false
+    true
+    ```
+
+No exemplo acima, `x` é `true` porque 5 é maior ou igual a 2. `y` é `false`
+porque 3 não é menor ou igual a 1. `z` é `true` porque na comparação de
+strings, a ordem lexicográfica é levada em consideração, e "lua" é
+considerado maior ou igual a "Lua" nesse caso.
