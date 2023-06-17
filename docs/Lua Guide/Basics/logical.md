@@ -39,7 +39,19 @@ valor verdadeiro caso todos sejam verdadeiros.
     true
     false
     0
-    ````
+    ```
+
+## Tabela Verdade para Operadores Lógicos
+
+A tabela a seguir mostra todas as combinações possíveis dos operandos `A` e `B`
+nos operadores `and` e `or`, juntamente com seus respectivos resultados.
+
+| Operando A | Operando B | `A and B` | `A or B` |
+| ---------- | ---------- | --------- | -------- |
+| `true`     | `true`     | `true`    | `true`   |
+| `true`     | `false`    | `false`   | `true`   |
+| `false`    | `true`     | `false`   | `true`   |
+| `false`    | `false`    | `false`   | `false`  |
 
 ## Operador lógico "or"
 
