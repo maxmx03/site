@@ -19,6 +19,7 @@ nav:
         Operações Aritméticas: Lua Guide/Basics/arithmetic.md
         Operadores Relacionais: Lua Guide/Basics/relational.md
         Operadores Lógicos: Lua Guide/Basics/logical.md
+        Outros Operadores: Lua Guide/Basics/misc.md
       Biblioteca do Lua:
         String: Lua Guide/Lua Library/string.md
         Math: Lua Guide/Lua Library/math.md

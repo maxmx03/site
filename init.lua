@@ -1,7 +1,4 @@
-local x = 5 > 2
-local y = 3 < 1
-local z = "lua" > "Lua"
+local str = "Hello"
+local length = #str
 
-print(x)
-print(y)
-print(z)
+print(length)
