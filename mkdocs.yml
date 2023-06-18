@@ -21,6 +21,7 @@ nav:
         Operadores Lógicos: Lua Guide/Basics/logical.md
         Outros Operadores: Lua Guide/Basics/misc.md
         Estruturas de Controle: Lua Guide/Basics/control.md
+        Estruturas de repetição: Lua Guide/Basics/loops.md
       Biblioteca do Lua:
         String: Lua Guide/Lua Library/string.md
         Math: Lua Guide/Lua Library/math.md
