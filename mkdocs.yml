@@ -20,6 +20,7 @@ nav:
         Operadores Relacionais: Lua Guide/Basics/relational.md
         Operadores Lógicos: Lua Guide/Basics/logical.md
         Outros Operadores: Lua Guide/Basics/misc.md
+        Estruturas de Controle: Lua Guide/Basics/control.md
       Biblioteca do Lua:
         String: Lua Guide/Lua Library/string.md
         Math: Lua Guide/Lua Library/math.md
@@ -63,5 +64,10 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 extra_css:
   - stylesheets/extra.css
