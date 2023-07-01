@@ -129,7 +129,7 @@ insere um elemento no final do array automaticamente.
 Em Lua, é possível iterar em um array de diferentes maneiras. Vou mostrar
 algumas das formas de como percorrer os elementos de um array.
 
-## Utilizando o laço `for`
+### Utilizando o laço `for`
 
 Um método comum para iterar em um array é usar o laço `for` juntamente com o
 operador `#` para obter o tamanho do array. Aqui está um exemplo:
@@ -157,7 +157,7 @@ Nesse exemplo, usamos o laço `for` para iterar de `1` até o tamanho do array
 ``#meuArray`. A cada iteração, imprimimos o elemento correspondente ao índice
 `i`.
 
-## Utilizando a função `ipairs()`
+### Utilizando a função `ipairs()`
 
 Outra forma conveniente de iterar em um array é utilizando a função
 `ipairs()`, que retorna pares índice-valor. Aqui está um exemplo:
@@ -187,90 +187,87 @@ Outra forma conveniente de iterar em um array é utilizando a função
     `table.foreachi`, porém elas foram descontinuadas e não são mais
     recomendadas para uso
 
-## Estrutura de Salto Goto
+## Diferença entre tabelas e outros tipos de dados
 
-A estrutura de salto Goto é uma construção de controle de fluxo disponível
-em algumas linguagens de programação, incluindo Lua. Essa estrutura permite
-que o programa desvie incondicionalmente para uma determinada posição no
-código identificada por um rótulo (label).
+Ao contrário de strings, números, booleanos, e valores nulos (nil), as tabelas
+são mutáveis, o que significa que você pode modificar
+seus valores.
+
+No entanto, quando se trata de strings, se você tentar alterar o valor de uma
+string diretamente, nada acontecerá.
 
 === "Lua"
 
     ```lua
-    local function foreach(t, callback)
-      if type(t) ~= 'table' then
-        goto exit
-      end
+    local hello = "Olá, mundo"
+    string.upper(hello)
 
-      local size = #t
-
-      if size == 0 then
-        goto exit
-      end
-
-      local key = 1
-
-      ::verify::
-      if size >= key then
-        goto increment
-      else
-        goto exit
-      end
-
-      ::increment::
-      callback(key, t[key])
-      key = key + 1
-      goto verify
-
-      ::exit::
-    end
-
-    local meuArray = {
-        "Primeiro elemento",
-        "Segundo elemento",
-        "Terceiro elemento",
-        "Último elemento",
-    }
-
-    foreach(meuArray, function(key, value)
-      print(key, value)
-    end)
-    ```
-
-=== "Recomendado"
-
-    ```lua
-    local function foreach(t, callback)
-      if type(t) ~= 'table' then
-        return
-      end
-
-      local size = #t
-
-      if size == 0 then
-        return
-      end
-
-      for key = 1, size do
-        callback(key, t[key])
-      end
-    end
-
-    foreach(meuArray, function(key, value)
-      print(key, value)
-    end)
+    print(hello)
     ```
 
 === "Console"
 
     ```bash
-    1   Primeiro elemento
-    2   Segundo elemento
-    3   Terceiro elemento
-    4   Último elemento
+    Olá, mundo
     ```
 
-!!! warning
+Isso ocorre porque as strings em Lua são consideradas "somente leitura"
+(read-only). Ao tentar alterar o valor de uma string, na verdade,
+uma nova string é criada em um novo espaço de memória, mas a variável
+original não é modificada.
 
-    O uso da estrutura de salto é geralmente desencorajado e considerado uma
-    prática de programação ruim.
+Para efetuar a modificação em uma string e salvar o novo valor na mesma
+variável, você precisa atribuir o resultado da modificação de volta à
+variável.
+Em outras palavras, você precisa atualizar a variável para apontar para o
+novo endereço de memória onde está armazenada a string modificada.
+
+=== "Lua"
+
+    ```lua
+    local hello = "Olá, mundo"
+    hello = string.upper(hello)
+
+    print(hello)
+    ```
+
+=== "Console"
+
+    ```bash
+    OLÁ, MUNDO
+    ```
+
+Com tabelas, não é necessário fazer a atribuição de volta à variável.
+Ao modificar a tabela, o valor original será alterado.
+Em outras palavras, ao realizar uma modificação em uma tabela, você está
+alterando o espaço de memória onde a tabela está armazenada.
+Não é necessário criar uma nova tabela ou atualizar referências, pois as
+alterações são feitas diretamente no local de armazenamento da tabela.
+
+=== "Lua"
+
+    ```lua
+    local frutas = {}
+
+    local function insert(t, value)
+      t[#t + 1] = value
+
+      -- não precisa de return
+    end
+
+    insert(frutas, "Uva")
+    insert(frutas, "Maça")
+    insert(frutas, "Laranja")
+
+    for key, value in ipairs(frutas) do
+      print(key, value)
+    end
+    ```
+
+=== "Console"
+
+    ```bash
+    1       Uva
+    2       Maça
+    3       Laranja
+    ```

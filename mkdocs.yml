@@ -25,6 +25,7 @@ nav:
       Tabelas:
         Introdução: Lua Guide/Tables/index.md
         Arrays: Lua Guide/Tables/arrays.md
+        Dicionários: Lua Guide/Tables/dictionary.md
       Biblioteca do Lua:
         String: Lua Guide/Lua Library/string.md
         Math: Lua Guide/Lua Library/math.md
