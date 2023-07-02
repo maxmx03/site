@@ -2,7 +2,7 @@
 
 Arrays são estruturas de dados que permitem armazenar uma coleção de
 elementos sequenciais, onde cada elemento é identificado por um índice
-numérico. Os arrays em Lua são implementados utilizando tabelas, onde os
+numérico. Os arrays são implementados utilizando tabelas, onde os
 índices numéricos são utilizados para acessar os elementos da tabela.
 
 === "Lua"
@@ -30,7 +30,7 @@ numérico. Os arrays em Lua são implementados utilizando tabelas, onde os
 
 !!! note
 
-    Em Lua, as tabelas são estruturadas com índices iniciando em 1, não em 0.
+    As tabelas são estruturadas com índices iniciando em 1, não em 0.
     Isso significa que o primeiro elemento de uma tabela é acessado pelo
     índice 1, o segundo elemento pelo índice 2 e assim por diante.
 
@@ -190,8 +190,7 @@ Outra forma conveniente de iterar em um array é utilizando a função
 ## Diferença entre tabelas e outros tipos de dados
 
 Ao contrário de strings, números, booleanos, e valores nulos (nil), as tabelas
-são mutáveis, o que significa que você pode modificar
-seus valores.
+são mutáveis, o que significa que você pode modificar seus valores.
 
 No entanto, quando se trata de strings, se você tentar alterar o valor de uma
 string diretamente, nada acontecerá.
@@ -211,7 +210,7 @@ string diretamente, nada acontecerá.
     Olá, mundo
     ```
 
-Isso ocorre porque as strings em Lua são consideradas "somente leitura"
+Isso ocorre porque as strings são consideradas "somente leitura"
 (read-only). Ao tentar alterar o valor de uma string, na verdade,
 uma nova string é criada em um novo espaço de memória, mas a variável
 original não é modificada.

@@ -22,6 +22,7 @@ nav:
         Outros Operadores: Lua Guide/Basics/misc.md
         Estruturas de Controle: Lua Guide/Basics/control.md
         Estruturas de Repetição: Lua Guide/Basics/loops.md
+        Estrutura de Salto: Lua Guide/Basics/goto.md
       Tabelas:
         Introdução: Lua Guide/Tables/index.md
         Arrays: Lua Guide/Tables/arrays.md
