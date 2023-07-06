@@ -219,3 +219,41 @@ passados para a função. Para isso, você pode usar os parâmetros especiais `.
     6
     30
     ```
+
+## Definindo uma Função Closure
+
+Uma das principais utilidades das funções Closure é retorná-las de outras
+funções, permitindo o acesso ao contexto da função externa.
+
+=== "Lua"
+
+    ```lua
+    local function counter()
+      local count = 0
+
+      return function()
+        count = count + 1
+        return count
+      end
+    end
+
+    local increment = counter()
+
+    print(increment()) -- 1
+    print(increment()) -- 2
+    print(increment()) -- 3
+    ```
+
+=== "Console"
+
+    ```bash
+    1
+    2
+    3
+    ```
+
+Neste exemplo, a função counter retorna uma função Closure que
+incrementa um contador a cada chamada. A variável count é lembrada
+pela função Closure e mantém seu valor entre as chamadas subsequentes.
+Ao chamar increment repetidamente, obtemos os valores incrementais do
+contador.

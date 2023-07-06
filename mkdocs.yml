@@ -23,6 +23,7 @@ nav:
         Estruturas de Controle: Lua Guide/Basics/control.md
         Estruturas de Repetição: Lua Guide/Basics/loops.md
         Estrutura de Salto: Lua Guide/Basics/goto.md
+        Break e Continue: Lua Guide/Basics/break.md
       Tabelas:
         Introdução: Lua Guide/Tables/index.md
         Arrays: Lua Guide/Tables/arrays.md
@@ -30,6 +31,7 @@ nav:
       Biblioteca do Lua:
         String: Lua Guide/Lua Library/string.md
         Math: Lua Guide/Lua Library/math.md
+        Table: Lua Guide/Lua Library/table.md
 theme:
   name: material
   features:
