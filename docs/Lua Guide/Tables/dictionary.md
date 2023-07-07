@@ -62,6 +62,60 @@ valor a uma nova chave específica.
 Agora a tabela "pessoa" terá um novo par de chave e valor:
 "profissao" é "Engenheiro".
 
+## Iterando por Dicionários em Lua
+
+Em Lua, é possível iterar por um dicionário usando o laço `for` juntamente
+com a função `pairs`. A função `pairs` retorna uma função iteradora que
+percorre todos os pares de chave e valor do dicionário.
+
+=== "Lua"
+
+    ```lua
+    local pessoa = {
+      nome = "Max",
+      idade = 30,
+      profissao = "Engenheiro"
+    }
+
+    for chave, valor in pairs(pessoa) do
+      print(chave, valor)
+    end
+    ```
+
+=== "Função personalizada"
+
+    ```lua
+    local pessoa = {
+      nome = "Max",
+      idade = 30,
+      profissao = "Engenheiro",
+    }
+
+    -- Função para iterar sobre o dicionário
+    local function iterarDicionario(tabela)
+      local chaveAnterior = nil  -- Variável para armazenar a chave anterior
+
+      -- Função iteradora personalizada
+      return function(tabela)
+        local chave, valor = next(tabela, chaveAnterior)  -- Obtém o próximo par de chave e valor
+        chaveAnterior = chave  -- Armazena a chave atual para a próxima iteração
+        return chave, valor  -- Retorna a chave e o valor atual
+      end, tabela  -- Retorna a função iteradora e a tabela original
+    end
+
+    for chave, valor in iterarDicionario(pessoa) do
+      print(chave, valor)
+    end
+    ```
+
+=== "Console"
+
+    ```bash
+    profissao       Engenheiro
+    nome            Max
+    idade           30
+    ```
+
 ## Criando uma cópia de uma tabela
 
 Quando você atribui uma tabela a uma variável ou passa uma tabela como
