@@ -3,6 +3,7 @@ site_url: ""
 repo_url: https://github.com/maxmx03/site
 repo_name: maxmx03/site
 nav:
+  - Currículo: CV/index.md
   - Curso de Lua:
       Primeiros Passos:
         Introdução: Lua Guide/Getting Started/index.md
