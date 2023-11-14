@@ -4,20 +4,19 @@ Profissão: Analista de Sistemas
 
 ## Competências
 
-| Frontend      | Backend        | Design        | Outros             |
-| ------------- | -------------- | ------------- | ------------------ |
-| HTML          | Node.js        | Figma         | Neovim             |
-| CSS           | Express.js     | Atomic Design | Vim                |
-| Javascript    | Java           | Adobe XD      | Linux              |
-| TailwindCss   | PHP            |               | Visual Studio Code |
-| React         | Apollo GraphQl |               | Markdown           |
-| React Native  | Prisma         |               | Github             |
-| Redux         | Firebase       |               | Bash               |
-| Redux Toolkit | Sqlite         |               | Lua                |
-| Materail UI   | MySQL          |               | Python             |
-| Chakra UI     | Mongodb        |               | Inglês             |
-| Next.js       |                |               |                    |
-| Flutter       |                |               |                    |
+| Frontend                | Backend        | Design        | Outros             |
+| ----------------------- | -------------- | ------------- | ------------------ |
+| HTML                    | Node.js        | Figma         | Neovim             |
+| CSS                     | Express.js     | Atomic Design | Vim                |
+| Javascript / Typescript | Java           | Adobe XD      | Linux              |
+| Tailwindcss             | PHP            |               | Visual Studio Code |
+| React / Next.js         | Apollo GraphQl |               | Markdown           |
+| React Native            | Prisma         |               | Github             |
+| Redux                   | Firebase       |               | Bash               |
+| Redux Toolkit           | Sqlite         |               | Lua                |
+| Material UI             | MySQL          |               | Python             |
+| Chakra UI               | Mongodb        |               | Inglês             |
+| Flutter                 |                |               |                    |
 
 ## Experiência
 
@@ -29,7 +28,7 @@ Profissão: Analista de Sistemas
 
 | Faculdade  | Curso                                 | Duração       |
 | ---------- | ------------------------------------- | ------------- |
-| Anhanguera | Analise e Desenvolvimento de Sistemas | 2 anos e meio |
+| Anhanguera | Análise e Desenvolvimento de Sistemas | 2 anos e meio |
 
 ## Social
 
