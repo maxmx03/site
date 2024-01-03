@@ -4,6 +4,8 @@ repo_url: https://github.com/maxmx03/site
 repo_name: maxmx03/site
 nav:
   - Currículo: CV/index.md
+  - Learn Python:
+      Beginner: python/beginner.md
   - Curso de Lua:
       Primeiros Passos:
         Introdução: Lua Guide/Getting Started/index.md
