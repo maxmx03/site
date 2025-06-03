@@ -1,0 +1,90 @@
+---
+title: Instalando e Configurando o Neovim
+description: instalação e configuração do neovim.
+banner:
+  content: |
+    Este curso está disponível gratuitamente no YouTube. Acesse
+    <a href="https://www.youtube.com/playlist?list=PLRQTSis2KT5Ew_CzMe-uff7LksfN1shXy">Playlist</a>
+---
+
+import { Steps, Code, Aside } from "@astrojs/starlight/components";
+
+## Instalação
+
+- [Instalação](https://github.com/neovim/neovim/blob/master/INSTALL.md)
+
+## Plugins
+
+- [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [conform](https://github.com/stevearc/conform.nvim)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+
+## Lspconfig
+
+export const lspconfig = `
+const server = 'lua_ls'
+const config = {
+  settings = {
+    Lua = {
+      hint = {
+        enable = true,
+      },
+    },
+  },
+}
+vim.diagnostic.config {
+  virtual_text = true,
+}
+vim.lsp.config('*', {
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  root_markers = { '.git' },
+})
+vim.lsp.config(server, config)
+vim.lsp.enable(server)
+local autocmd = vim.api.nvim_create_autocmd
+autocmd('LspAttach', {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client:supports_method 'textDocument/inlayHint' then
+      vim.lsp.inlay_hint.enable(true)
+    end
+  end,
+})
+`;
+
+
+<Code code={lspconfig} lang="lua" />
+
+## Stylua
+
+Agora é a hora de configuramos a nosso formatador.
+
+export const stylua = `
+column_width = 100
+line_endings = "Unix"
+indent_type = "Spaces"
+indent_width = 2
+quote_style = "AutoPreferSingle"
+call_parentheses = "None"
+`;
+
+<Steps>
+  <ol>
+    <li>
+      Instale o CLI do stylua com o Cargo, ou com seu gerenciador de pacotes.
+      <Code code="cargo install stylua" lang="bash" />
+      <Aside type="tip" title="Mas, como instalar cargo?">
+        Cargo pode ser instalado através deste site:
+        [Rust](https://www.rust-lang.org/)
+      </Aside>
+    </li>
+    <li>
+      Crie um arquivo `stylua.toml` na raiz do nosso projeto.
+      <Code code="touch stylua.toml" lang="bash" />
+    </li>
+    <li>
+      Depois, adicionaremos a configuração.
+      <Code code={stylua} lang="bash" />
+    </li>
+  </ol>
+</Steps>

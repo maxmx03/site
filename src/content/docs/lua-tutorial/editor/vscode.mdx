@@ -1,0 +1,83 @@
+---
+title: Instalando e Configurando o VSCode
+description: instalação e configuração do visual studio code.
+sidebar:
+  order: 1
+banner:
+  content: |
+    Este curso está disponível gratuitamente no YouTube. Acesse
+    <a href="https://www.youtube.com/playlist?list=PLRQTSis2KT5Ew_CzMe-uff7LksfN1shXy">Playlist</a>
+---
+
+import { Steps, Code, Aside } from "@astrojs/starlight/components";
+
+O **Visual Studio Code (VS Code)** é um editor de código-fonte desenvolvido pela Microsoft. Ele é gratuito, de código aberto e está disponível para Windows, macOS e Linux.
+
+## Instalação
+
+O instalador está disponível no site [code.visualstudio.com](https://code.visualstudio.com/).
+
+## Extensões
+
+Como o VS Code é um editor de texto simples, precisamos instalar extensões na loja para que possamos programar em Lua. Depois da instalação, precisamos escolher as nossas extensões.
+
+- [Lua - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=sumneko.lua)
+- [StyLua - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=JohnnyMorganz.stylua)
+- [Error Gutters - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=IgorSbitnev.error-gutters)
+- [Error Lens - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+
+## Configuração
+
+No Visual Studio Code, você pode acessar as editar as configuração no `settings.json`.
+
+export const code = `
+"editor.inlayHints.enabled": "on",
+"Lua.hint.enable": true
+`;
+
+<Steps>
+  <ol>
+    <li>Vá até o ícone Gerenciar (⚙️) no canto inferior esquerdo</li>
+    <li>Selecione **Configurações**</li>
+    <li>Click em Abrir configurações</li>
+    <li>
+      No settings.json adicione o json abaixo, dessa forma habilitaremos o
+      inlay-hint do nosso [language server](https://luals.github.io/):
+      <Code code={code} lang="json" />
+    </li>
+  </ol>
+</Steps>
+
+## Stylua
+
+Agora é a hora de configuramos a nosso formatador.
+
+export const stylua = `
+column_width = 100
+line_endings = "Unix"
+indent_type = "Spaces"
+indent_width = 2
+quote_style = "AutoPreferSingle"
+call_parentheses = "None"
+`;
+
+<Steps>
+  <ol>
+    <li>
+      Instale o CLI do stylua com o Cargo, ou com seu gerenciador de pacotes.
+      <Code code="cargo install stylua" lang="bash" />
+      <Aside type="tip" title="Mas, como instalar cargo?">
+        Cargo pode ser instalado através deste site:
+        [Rust](https://www.rust-lang.org/)
+      </Aside>
+    </li>
+    <li>
+      Crie um arquivo `stylua.toml` na raiz do nosso projeto.
+      <Code code="touch stylua.toml" lang="bash" />
+    </li>
+    <li>
+      Depois, adicionaremos a configuração.
+      <Code code={stylua} lang="bash" />
+    </li>
+  </ol>
+</Steps>

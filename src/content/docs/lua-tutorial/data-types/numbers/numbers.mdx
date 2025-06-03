@@ -1,0 +1,34 @@
+---
+title: Números
+description: tipos de dados do lua
+sidebar:
+  order: 1
+---
+import { Aside } from "@astrojs/starlight/components";
+
+Lua suporta diferentes formatos de números, como decimais, hexadecimais e notações científicas: Existem dois tipos principais de números:
+
+1. **Inteiros de 64 bits:** Representam números inteiros com precisão exata.
+2. **Ponto flutuante de precisão dupla:** Usados para representar números com casas decimais.
+
+<Aside type="caution" title="Watch out!">
+Desde o Lua 5.3, a linguagem passou a suportar inteiros explícitos, mas o comportamento pode variar dependendo da implementação.
+</Aside>
+
+```lua
+> 2
+> 2.0
+> 2e1 -> 20.0
+> 0xff -> 255
+> 0.001e4 -> 10.0
+```
+
+Ambos os tipos de números, inteiros e flutuantes, possuem o tipo `number` em Lua. Vale notar que, ao comparar um número inteiro e um número flutuante, ambos podem ter o mesmo valor e serem considerados iguais.
+
+```lua
+math.type(10) -- integer
+math.type(10.0) -- float
+type(10) -- number
+type(10.0) -- number
+10 == 10.0 -- true
+```

@@ -1,0 +1,70 @@
+---
+title: Instalação
+description: Instalação da linguagem lua
+sidebar:
+  order: 2
+banner:
+  content: |
+    Este curso está disponível gratuitamente no YouTube. Acesse a
+    <a href="https://www.youtube.com/playlist?list=PLRQTSis2KT5Ew_CzMe-uff7LksfN1shXy">Playlist</a>
+---
+
+import { Steps, Code } from "@astrojs/starlight/components";
+
+Para instalar o Lua no Linux ou macOS, você pode utilizar o gerenciador de pacotes da sua distribuição.
+
+## Ubuntu
+
+<Steps>
+  <ol>
+    <li>
+      Instalando utilizando o gerenciador de pacote `apt`.
+      <Code code="sudo apt install lua5.4" lang="bash" />
+    </li>
+    <li>
+      Verifique se foi instalado corretamente.
+      <Code code="lua -v" lang="bash" />
+    </li>
+    <li>Pronto</li>
+  </ol>
+</Steps>
+
+## macOS (Homebrew)
+
+<Steps>
+  <ol>
+    <li>
+      Instalando utilizando o gerenciador de pacote `apt`.
+      <Code code="brew install lua" lang="bash" />
+    </li>
+    <li>
+      Verifique se foi instalado corretamente.
+      <Code code="lua -v" lang="bash" />
+    </li>
+    <li>Pronto</li>
+  </ol>
+</Steps>
+
+## Windows 11
+
+No Windows 11, a instalação é feita pelo executável disponível no repositório do GitHub.
+segue o link: [rjpcomputin](https://github.com/rjpcomputing/luaforwindows)
+Também da para utilizar o gerenciador de pacotes https://scoop.sh/
+
+<Steps>
+  <ol>
+    <li>
+      Adicione o **bucket** main.
+      <Code code="scoop bucket add main" lang="bash" />
+    </li>
+    <li>
+      Instalando utilizando o gerenciador de pacote `scoop`.
+      <Code code="scoop install main/lua" lang="bash" />
+    </li>
+    <li>
+      Verifique se foi instalado corretamente
+      <Code code="lua -v" lang="bash" />
+    </li>
+    <li>Pronto</li>
+  </ol>
+</Steps>
