@@ -1,0 +1,223 @@
+---
+title: Booleano
+description: o tipo booleano na linguagem lua
+---
+
+import { Code, Aside, Tabs, TabItem } from "@astrojs/starlight/components";
+
+O tipo booleano possui dois valores: `false` e `true`, que representam `falso` e `verdadeiro`. Em Lua, qualquer valor pode ser avaliado em uma condição. Os únicos valores considerados `false` são: `nil` e `false`.
+
+## Operadores Lógicos
+
+Os operadores lógicos testam e combinam condições lógicas. Eles permitem que você avalie a veracidade de expressões e tome decisões com base nesses resultados. Os operadores lógicos são comumente usados em estruturas de controle condicional, como condicionais `if-else` e `loops`, para determinar o fluxo de execução do programa.
+
+<Aside type="tip" title="Dica">
+  Podemos utilizar os operadores lógicos para reproduzir a expressão `a ? b : c`
+  (operador ternário) da linguagem C.
+  <Code code="a and b or c" lang="lua" />
+</Aside>
+
+### Operador Lógico `AND`
+
+O operador `and`, retorna o primeiro operando caso este seja `false`; caso contrário, retorna o segundo.
+
+export const codeAnd = `
+print(false and 5)
+print(true and 5)
+print(false and nil)
+`;
+export const codeAndOutput = `
+false
+5
+false
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeAnd} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={codeAndOutput} lang="lua" />
+  </TabItem>
+</Tabs>
+
+### Operador Lógicos `OR`
+
+O operador lógico or retorna o primeiro valor verdadeiro encontrado ou o último valor falso, caso todos sejam falsos.
+
+export const codeOr = `
+print(false or 5)
+print(true or 5)
+print(false or nil)
+`;
+export const codeOrOutput = `
+5
+true
+nil
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeOr} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={codeOrOutput} lang="lua" />
+  </TabItem>
+</Tabs>
+
+## Operadores Relacionais
+
+Os operadores relacionais são usados para comparar valores e avaliar condições. Eles retornam um valor booleano que indica se as condições são verdadeiras ou falsas.
+
+### Operador Relacional `==`
+
+O operador `==` retorna `true` se os valores fornecidos forem iguais. Caso contrário, retorna `false`.
+
+export const codeEqual = `
+local a = 5
+local b = 5
+
+print(a == b)
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeEqual} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code="true" lang="bash" />
+  </TabItem>
+</Tabs>
+
+### Operador Relacional `~=`
+
+O operador `~=` retorna `true` se os valores fornecidos forem diferentes. Caso contrário, retorna `false`.
+
+export const codeNotEqual = `
+local a = 5
+local b = 6
+
+print(a ~= b)
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeNotEqual} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code="true" lang="bash" />
+  </TabItem>
+</Tabs>
+
+### Operador Relacional `>`
+
+O operador `>` retorna `true` se o primeiro valor for maior que o segundo. Caso contrário, retorna `false`.
+
+export const codeGreaterThan = `
+local a = 5
+local b = 6
+
+print(a > b)
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeGreaterThan} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code="true" lang="bash" />
+  </TabItem>
+</Tabs>
+
+### Operador Relacional `>=`
+
+O operador `>=` retorna `true` se o primeiro valor for maior ou igual ao segundo. Caso contrário, retorna `false`.
+
+export const codeGreaterThanOrEqual = `
+local a = 5
+local b = 6
+
+print(a >= b)
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeGreaterThanOrEqual} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code="true" lang="bash" />
+  </TabItem>
+</Tabs>
+
+### Operador Relacional `<`
+
+O operador `<` retorna `true` se o primeiro valor for menor que o segundo. Caso contrário, retorna `false`.
+
+export const codeLessThan = `
+local a = 5
+local b = 6
+
+print(a < b)
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeLessThan} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code="true" lang="bash" />
+  </TabItem>
+</Tabs>
+
+### Operador Relacional `<=`
+
+O operador `<=` retorna `true` se o primeiro valor for menor ou igual ao segundo. Caso contrário, retorna `false`.
+
+export const codeLessThanOrEqual = `
+local a = 5
+local b = 6
+
+print(a <= b)
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeLessThanOrEqual} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code="true" lang="bash" />
+  </TabItem>
+</Tabs>
+
+### A palavra-chave `not`
+
+A palavra-chave `not` é usada para negar o resultado de um operador lógico. Ela retorna `true` se o operando for `false`, e `false` se o operando for `true`.
+
+export const codeNot = `
+local a = 5
+local b = 6
+print(not (a == b))
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeNot} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code="true" lang="bash" />
+  </TabItem>
+</Tabs>
+
+<Aside type="caution" title="Aviso">
+  A palavra-chave `not` deve ser usada com cuidado, pois, se os operandos não
+  forem separados corretamente, poderá resultar em resultados inesperados. No
+  exemplo abaixo, a variável `a` está sendo negada pelo `not` e, em seguida, é
+  comparada com `b`.
+  <Code code="not a == b" lang="lua" />
+  Se o valor de `a` for `false`, o operador `not` fará com que a variável `a` se
+  torne `true`. Se o valor de `b` for `true`, o resultado final será `true`.
+  <Code
+    code={`local a = false\nlocal b = true\nprint(not a == b) -- == print((not a) == b)`}
+    lang="lua"
+  />
+</Aside>

@@ -5,15 +5,25 @@ sidebar:
   order: 2
 ---
 
+import { Tabs, TabItem, Code, Aside } from "@astrojs/starlight/components";
+
 A Biblioteca String disponibiliza diversas funções dentro da tabela `string`. Ela também define uma metatabela `__index` para as nossas strings que aponta para a tabela `string`. Dessa forma, podemos acessar as funções da biblioteca diretamente na nossa string.
 
-```lua
+export const codeFormatExample = `
 local hello = "ola %s"
 local world = "mundo"
 print(hello:format(world))
-
 print(string.format("%s %s", "ola", "mundo"))
-```
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeFormatExample} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={`ola mundo\nola mundo`} lang="bash" />
+  </TabItem>
+</Tabs>
 
 ## String.format
 
@@ -41,7 +51,6 @@ print(string.format("km %20.1f", 100)) -- km                100.0
 print(string.format("%-20.1f km", 100)) -- 100.0                km
 print(string.format("%.3d", 10)) -- 010
 print(string.format("%.10f", 10.0)) -- 10.0000000000
-
 ```
 
 ## String.sub
@@ -104,24 +113,31 @@ print(repetido) -- Olá!Olá!Olá!
 
 A função `string.gmatch` é usada para iterar sobre as ocorrências de um padrão em uma string. Ela recebe dois parâmetros: a string a ser analisada e o padrão a ser procurado. Ela retorna uma função iteradora que pode ser usada em um loop `for`.
 
-```lua
+export const codeGmatchExample = `
 local texto = "Lua é uma linguagem de programação"
 
 for palavra in string.gmatch(texto, "[%aéçã]+") do
-  print(palavra)
+\tprint(palavra)
 end
-```
+`
 
-saída:
-
-```bash
+export const codeGmatchExampleOutput = `
 Lua
 é
 uma
 linguagem
 de
 programação
-```
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeGmatchExample} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={codeGmatchExampleOutput} lang="bash" />
+  </TabItem>
+</Tabs>
 
 # **String.gsub**
 
@@ -135,7 +151,6 @@ print(novo_texto) -- Lua é uma idioma de programação
 print(string.gsub("ola pessoal", "l", "u")) -- oua pessoau   2
 print(string.gsub("ola pessoal", "ss", "ç")) -- ola peçoal   1
 print(string.gsub("ola pessoal", "a", ".")) -- ol. pesso.l   2
-
 ```
 
 ## Encontrar Padrões
@@ -144,18 +159,96 @@ Uma classe de caracteres é usada para representar um conjunto de caracteres. As
 
 Elas são amplamente utilizadas em diversas funções da biblioteca de strings do Lua, como `string.match`, `string.gmatch` e `string.gsub`.
 
-| Caractere de Classe | descrição |
-| --- | --- |
-| %a | representa todas as letras. |
-| %c | representa todos os caracteres de controle. |
-| %d | representa todos os dígitos. |
-| %l | representa todas as letras minúsculas. |
-| %p | representa todos os caracteres de pontuação. |
-| %s | representa todos os caracteres de espaço. |
-| %u | representa todas as letras maiúsculas. |
-| %w | representa todos os caracteres alfanuméricos. |
-| %x | representa todos os dígitos hexadecimais (0-9, a-f, A-F). |
-| %z | representa o caractere com representação 0. |
-| %x | representa o próprio caractere x (ex: %., %ç, %õ) |
-| [set] | representa a classe que é a união de todos os caracteres no conjunto |
-| [^set] | representa o complemento do conjunto, onde o conjunto é interpretado como descrito acima. |
+| Caractere de Classe | descrição                                                                                 |
+| ------------------- | ----------------------------------------------------------------------------------------- |
+| %a                  | representa todas as letras.                                                               |
+| %c                  | representa todos os caracteres de controle.                                               |
+| %d                  | representa todos os dígitos.                                                              |
+| %l                  | representa todas as letras minúsculas.                                                    |
+| %p                  | representa todos os caracteres de pontuação.                                              |
+| %s                  | representa todos os caracteres de espaço.                                                 |
+| %u                  | representa todas as letras maiúsculas.                                                    |
+| %w                  | representa todos os caracteres alfanuméricos.                                             |
+| %x                  | representa todos os dígitos hexadecimais (0-9, a-f, A-F).                                 |
+| %z                  | representa o caractere com representação 0.                                               |
+| %x                  | representa o próprio caractere x (ex: %., %ç, %õ)                                         |
+| [set]               | representa a classe que é a união de todos os caracteres no conjunto                      |
+| [^set]              | representa o complemento do conjunto, onde o conjunto é interpretado como descrito acima. |
+
+### `%a`:
+
+export const codeAllexample = `
+local texto = "Olá, mundo!"
+local texto_encontrado = string.match(texto, "%a+")
+
+print(texto_encontrado)
+`
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeAllexample} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code="Ol" lang="bash" />
+  </TabItem>
+</Tabs>
+
+<Aside title="Nota">
+  `string.match` retorna o primeiro padrão encontrado, se não encontrar nenhum,
+  retorna nil.
+</Aside>
+
+### [set]
+
+export const codeSetExample = `
+local texto = "Ola, mundo!"
+
+for texto_encontrado in string.gmatch(texto, "[Oauo]") do
+\tprint(texto_encontrado)
+end
+`
+
+export const codeSetExampleOutput = `
+O
+a
+u
+o
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeSetExample} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={codeSetExampleOutput} lang="bash" />
+  </TabItem>
+</Tabs>
+
+### [^set]
+
+export const codeSetNotExample = `
+local texto = "Ola, mundo!"
+
+for texto_encontrado in string.gmatch(texto, "[^Oauo]") do
+\tprint(texto_encontrado)
+end
+`;
+
+export const codeSetNotExampleOutput = `
+l
+,
+
+m
+n
+d
+!
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeSetNotExample} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={codeSetNotExampleOutput} lang="bash" />
+  </TabItem>
+</Tabs>

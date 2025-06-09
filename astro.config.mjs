@@ -5,8 +5,8 @@ import starlight from "@astrojs/starlight";
 // https://astro.build/config
 export default defineConfig({
   image: {
-   service: passthroughImageService(),
- },
+    service: passthroughImageService(),
+  },
   integrations: [
     starlight({
       title: "Milianor's Docs",
@@ -49,9 +49,11 @@ export default defineConfig({
                 },
                 {
                   label: "Strings",
-                  autogenerate: {
-                    directory: "lua-tutorial/data-types/strings",
-                  },
+                  slug: "lua-tutorial/data-types/strings",
+                },
+                {
+                  label: "Booleanos",
+                  slug: "lua-tutorial/data-types/boolean",
                 },
               ],
             },

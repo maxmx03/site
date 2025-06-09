@@ -1,0 +1,38 @@
+---
+title: UTF-8
+description: utf-8, lida com caracteres especiais.
+---
+
+import { Tabs, TabItem, Code } from "@astrojs/starlight/components";
+
+Lua utiliza a biblioteca `UTF8` para lidar com caracteres especiais. Funções como `reverse`, `upper` e `lower` não funcionam corretamente para strings em `UTF-8`. Além disso, outras funções podem apresentar um comportamento inesperado.
+
+```lua
+utf8.len("melão") -- 5
+string.len("melão") -- 6
+string.upper("melão") -- MELãO
+```
+
+Podemos utilizar `utf8.offset`, que converte a posição do caractere para o índice em bytes correto, garantindo que a operação de substring funcione como o esperado.
+
+```lua
+local utf8 = require 'utf8'
+local s = "melão"
+
+local result1 = string.sub(s, 5) -- 6
+local result2 = string.sub(s, utf8.offset(s, 5)) -- 5
+
+print(result1)
+print(result2)
+```
+
+A função `utf8.codes` permite-nos percorrer os caracteres de uma string `UTF8`.
+
+```lua
+local utf8 = require 'utf8'
+
+for _, byte in utf8.codes(utf_string) do
+  local caractere = utf8.char(byte)
+  print(string.format("byte: %d, caractere: %s", byte, caractere))
+end
+```
