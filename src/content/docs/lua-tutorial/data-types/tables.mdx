@@ -153,3 +153,194 @@ end
   `table.foreachi`, porém elas foram descontinuadas e não são mais recomendadas
   para uso
 </Aside>
+
+## Dicionários
+
+Diferentes dos arrays, que utilizam índices numéricos, os dicionários são estruturas de dados que utilizam pares de chave e valor para armazenar informações. Os dicionários são frequentemente usados para representar objetos do mundo real.
+
+export const codeDictionary = `
+local meuDicionario = {
+  nome = "Miliano",
+  profissao = "Desenvolvedor",
+}`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeDictionary} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={`Miliano\nDesenvolvedor`} lang="bash" />
+  </TabItem>
+</Tabs>
+
+### Acessando Valores
+
+Para acessar os valores de um dicionário, basta utilizar o nome da chave correspondente. O lua utiliza pontos para acessar as chaves de um dicionário.
+
+export const codeDictionaryAccess = `
+local meuDicionario = {
+  nome = "Miliano",
+  profissao = "Desenvolvedor",
+}
+
+print(meuDicionario.nome)
+print(meuDicionario.profissao)
+`
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeDictionaryAccess} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={`Miliano\nDesenvolvedor`} lang="bash" />
+  </TabItem>
+</Tabs>
+
+### Alterando Valores
+
+Para alterar os valores de um dicionário, basta utilizar o nome da chave correspondente. O lua utiliza pontos para acessar as chaves de um dicionário.
+
+export const codeDictionaryChange = `
+local meuDicionario = {
+  nome = "Miliano",
+  profissao = "Desenvolvedor",
+}
+
+meuDicionario["nome"] = "Fabricio"
+meuDicionario["profissao"] = "Desenvolvedor de Jogos"
+
+print(meuDicionario["nome"])
+print(meuDicionario["profissao"])
+`
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeDictionaryChange} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={`Fabricio\nDesenvolvedor de Jogos`} lang="bash" />
+  </TabItem>
+</Tabs>
+
+### Adicionando Elementos
+
+Para adicionar elementos a um dicionário, basta utilizar o nome da chave correspondente. O lua utiliza pontos para acessar as chaves de um dicionário.
+
+export const codeDictionaryAppend = `
+local meuDicionario = {}
+
+meuDicionario["nome"] = "Fabricio"
+meuDicionario["profissao"] = "Desenvolvedor de Jogos"
+
+print(meuDicionario["nome"])
+print(meuDicionario["profissao"])
+`
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeDictionaryAppend} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={`Fabricio\nDesenvolvedor de Jogos`} lang="bash" />
+  </TabItem>
+</Tabs>
+
+### Percorrendo Dicionários
+
+Para percorrer um dicionário em Lua, é possível utilizar um loop `for` com um índice numérico. O loop `for` é executado até que o índice atingir o último elemento do dicionário.
+
+export const codeDictionaryFor = `
+local meuDicionario = {
+  nome = "Miliano",
+  profissao = "Desenvolvedor",
+}
+
+for chave, valor in pairs(meuDicionario) do
+\tprint(chave, valor)
+end
+`
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeDictionaryFor} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={`nome\tMiliano\nprofissao\tDesenvolvedor`} lang="bash" />
+  </TabItem>
+</Tabs>
+
+<Aside title="Nota">
+  A função `pairs()` retorna pares chave-valor, o que significa que o primeiro
+  elemento da iteração é a chave do dicionário, e o segundo elemento é o valor
+  do elemento correspondente.
+</Aside>
+
+export const codeDictionaryForInPairs = `
+local meuDicionario = {
+  nome = "Miliano",
+  profissao = "Desenvolvedor",
+}
+
+for i, v in ipairs(meuDicionario) do
+\tprint(i, v)
+end
+`
+
+<Aside type="caution" title="Aviso">
+  Você não consegue usar `ipairs()` para iterar em um dicionário. Ele só tem
+  deve ser utilizado para iterar em arrays.
+  <Tabs>
+    <TabItem label="lua">
+      <Code code={codeDictionaryForInPairs} lang="lua" />
+    </TabItem>
+    <TabItem label="console">
+      <Code code="null" lang="bash" />
+    </TabItem>
+  </Tabs>
+</Aside>
+
+### Navegando por um Dicionário
+
+Quando tentamos acessar um índice de um dicionário que não existe, o lua retorna `nil`. Isso pode causar erros ao tentar acessar o valor de um índice inexistente.
+
+Para evitar problemas podemos utilizar operadores lógicos para verificar se uma chave existe no dicionário.
+
+export const codeDictionaryExists = `
+local meuDicionario = {
+  nome = "Fernando",
+}
+local idade = meuDicionario.idade or 22
+print(idade)
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeDictionaryExists} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={`22`} lang="bash" />
+  </TabItem>
+</Tabs>
+
+Também podemos utilizar paresenteses junto com o operador lógico `or` para verificar se uma chave existe no dicionário.
+
+export const codeDictionaryExists2 = `
+local pessoa1 = {
+  idade = 22,
+}
+local idade1 = ((pessoa1 or {}).idade or 24)
+print(idade1)
+
+local pessoa2 = {}
+local idade2 = ((pessoa2 or {}).idade or 24)
+print(idade2)
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeDictionaryExists2} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={`22\n24`} lang="bash" />
+  </TabItem>
+</Tabs>
