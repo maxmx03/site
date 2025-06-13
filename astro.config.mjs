@@ -59,6 +59,10 @@ export default defineConfig({
                   label: "Tabelas",
                   slug: "lua-tutorial/data-types/tables",
                 },
+                {
+                  label: "Nil",
+                  slug: "lua-tutorial/data-types/nil",
+                },
               ],
             },
             {
