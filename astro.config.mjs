@@ -55,6 +55,10 @@ export default defineConfig({
                   label: "Booleanos",
                   slug: "lua-tutorial/data-types/boolean",
                 },
+                {
+                  label: "Tabelas",
+                  slug: "lua-tutorial/data-types/tables",
+                },
               ],
             },
             {
