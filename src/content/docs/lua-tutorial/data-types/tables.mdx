@@ -1,0 +1,155 @@
+---
+title: Tabelas
+description: tabelas da linguagem lua
+---
+
+import { Aside, Tabs, TabItem, Code } from "@astrojs/starlight/components";
+
+As tabelas em Lua são uma estrutura de dados extremamente versátil, podendo ser utilizadas tanto como arrays quanto como dicionários. Vejamos alguns exemplos para ilustrar esses casos:
+
+## Arrays
+
+Arrays são estruturas de dados que permitem armazenar uma coleção de elementos sequenciais, onde cada elemento é identificado por um índice numérico. Os arrays são implementados utilizando tabelas, onde os índices numéricos são utilizados para acessar os elementos da tabela.
+
+export const codeArray = `
+local meuArray = {"Primeiro elemento", "Segundo elemento", "Terceiro elemento"}
+
+print(meuArray[1])
+print(meuArray[2])
+print(meuArray[3])
+`
+
+export const codeArrayOutput = `
+Primeiro elemento
+Segundo elemento
+Terceiro elemento
+`;
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeArray} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={codeArrayOutput} lang="bash" />
+  </TabItem>
+</Tabs>
+
+<Aside title="Nota">
+  As tabelas são estruturadas com índices iniciando em 1, não em 0. Isso
+  significa que o primeiro elemento de uma tabela é acessado pelo índice 1, o
+  segundo elemento pelo índice 2 e assim por diante.
+</Aside>
+
+### Flexibilidade de Tipos
+
+Uma das características interessantes dos arrays em Lua é a flexibilidade em relação aos tipos de dados armazenados. Ao contrário de algumas linguagens de programação, não é necessário que todos os elementos de um array em Lua sejam do mesmo tipo.
+
+export const codeArrayFlexibility = `
+local meuArray = {1, 2, true, "Lua"}
+
+print(meuArray[1])
+print(meuArray[2])
+print(meuArray[3])
+print(meuArray[4])
+`
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeArrayFlexibility} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code code={`1\n2\ntrue\nLua`} lang="bash" />
+  </TabItem>
+</Tabs>
+
+### Adicionando Elementos
+
+Em Lua, é possível adicionar novos elementos em um array de forma simples, sem a necessidade de utilizar funções específicas. Basta atribuir um valor a um novo índice do array.
+
+export const codeArrayAppend = `
+local meuArray = {}
+
+meuArray[1] = "Primeiro elemento"
+meuArray[2] = "Segundo elemento"
+meuArray[3] = "Terceiro elemento"
+meuArray[#meuArray + 1] = "Último elemento"
+
+print(meuArray[1])
+print(meuArray[2])
+print(meuArray[3])
+print(meuArray[4])
+`
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeArrayAppend} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code
+      code={`Primeiro elemento\nSegundo elemento\nTerceiro elemento\nUltimo elemento`}
+      lang="bash"
+    />
+  </TabItem>
+</Tabs>
+
+### Percorrendo Arrays
+
+Para percorrer um array em Lua, é possível utilizar um loop `for` com um índice numérico. O loop `for` é executado até que o índice atingir o último elemento do array.
+
+export const codeArrayFor = `
+local meuArray = {"Primeiro elemento", "Segundo elemento", "Terceiro elemento"}
+
+for i = 1, #meuArray do
+print(meuArray[i])
+end
+`
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeArrayFor} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code
+      code={`Primeiro elemento\nSegundo elemento\nTerceiro elemento`}
+      lang="bash"
+    />
+  </TabItem>
+</Tabs>
+
+<Aside title="Nota">
+  O `#` é um operador que retorna o número de elementos em um array.
+</Aside>
+
+Outra forma conveniente de iterar em um array é utilizando a função `ipairs()`, que retorna pares índice-valor. Aqui está um exemplo:
+
+export const codeArrayForInPairs = `
+local meuArray = {"Primeiro elemento", "Segundo elemento", "Terceiro elemento"}
+
+for i, v in ipairs(meuArray) do
+print(i, v)
+end
+`
+
+<Tabs>
+  <TabItem label="lua">
+    <Code code={codeArrayForInPairs} lang="lua" />
+  </TabItem>
+  <TabItem label="console">
+    <Code
+      code={`1\tPrimeiro elemento\n2\tSegundo elemento\n3\tTerceiro elemento`}
+      lang="bash"
+    />
+  </TabItem>
+</Tabs>
+
+<Aside title="Nota">
+  A função `ipairs()` retorna pares índice-valor, o que significa que o primeiro
+  elemento da iteração é o índice do array, e o segundo elemento é o valor do
+  elemento correspondente.
+</Aside>
+
+<Aside type="caution" title="Aviso">
+  O lua também disponibiliza outras duas funções, `table.foreach` e
+  `table.foreachi`, porém elas foram descontinuadas e não são mais recomendadas
+  para uso
+</Aside>
